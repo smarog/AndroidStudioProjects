@@ -43,6 +43,15 @@ public class CalculatorActivity extends AppCompatActivity
         Button buttonDecimal = (Button) findViewById(R.id.buttonDecimal);
         final TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
 
+        button0.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"0");
+            }
+        });
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +76,40 @@ public class CalculatorActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 resultTextView.setText(resultTextView.getText()+"+");
+            }
+        });
+
+        buttonDivision.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"/");
+            }
+        });
+
+        buttonDecimal.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+".");
+            }
+        });
+
+        buttonEquals.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                String expression;
+                double result;
+                String rsltxt;
+
+                expression = resultTextView.getText().toString();
+                result = calculateResult(expression);
+                rsltxt = Double.toString(result);
+                resultTextView.setText(rsltxt);
             }
         });
 
