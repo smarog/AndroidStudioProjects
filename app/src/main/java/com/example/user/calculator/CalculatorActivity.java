@@ -63,10 +63,61 @@ public class CalculatorActivity extends AppCompatActivity
             }
         });
 
+        button7.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"7");
+            }
+        });
+
+        button8.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"8");
+            }
+        });
+
+        button9.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"9");
+            }
+        });
+
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultTextView.setText(resultTextView.getText()+"+");
+            }
+        });
+
+        buttonMultiply.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"*");
+            }
+        });
+
+        buttonBackSpace.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(resultTextView.getText().length()>0)
+                {
+                    String bksp;
+                    bksp = resultTextView.getText().toString();
+                    bksp=bksp.substring(0,bksp.length()-1);
+                    resultTextView.setText(bksp);
+                }
             }
         });
 
