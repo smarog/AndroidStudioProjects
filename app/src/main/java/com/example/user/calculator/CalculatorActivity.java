@@ -6,9 +6,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.fathzer.soft.javaluator.DoubleEvaluator;
+
 public class CalculatorActivity extends AppCompatActivity
 {
 
+    public double calculateResult(String expression){
+        double result;
+        DoubleEvaluator evaluator=new DoubleEvaluator();
+        result=evaluator.evaluate(expression);
+        return result;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -62,19 +70,6 @@ public class CalculatorActivity extends AppCompatActivity
             }
         });
 
-        buttonEquals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String expression;
-                double result;
-                String rsltxt;
-
-                expression= resultTextView.getText().toString();
-                result= calculateResult(expression);
-                rsltxt= Double.toString(result);
-                resultTextView.setText(rsltxt);
-            }
-        });
 
     }
 }
