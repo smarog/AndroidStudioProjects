@@ -2,12 +2,21 @@ package com.example.user.calculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 public class CalculatorActivity extends AppCompatActivity
 {
 
+    public double calculateResult(String expression){
+        double result;
+        DoubleEvaluator evaluator=new DoubleEvaluator();
+        result=evaluator.evaluate(expression);
+        return result;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,6 +42,34 @@ public class CalculatorActivity extends AppCompatActivity
         Button buttonClear = (Button) findViewById(R.id.buttonClear);
         Button buttonDecimal = (Button) findViewById(R.id.buttonDecimal);
         final TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultTextView.setText(resultTextView.getText()+"1");
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultTextView.setText(resultTextView.getText()+"2");
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultTextView.setText(resultTextView.getText()+"3");
+            }
+        });
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultTextView.setText(resultTextView.getText()+"+");
+            }
+        });
+
 
     }
 }
