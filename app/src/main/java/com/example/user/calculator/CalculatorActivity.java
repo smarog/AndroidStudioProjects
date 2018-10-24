@@ -43,6 +43,15 @@ public class CalculatorActivity extends AppCompatActivity
         Button buttonDecimal = (Button) findViewById(R.id.buttonDecimal);
         final TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
 
+        button0.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"0");
+            }
+        });
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,10 +72,96 @@ public class CalculatorActivity extends AppCompatActivity
             }
         });
 
+        button7.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"7");
+            }
+        });
+
+        button8.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"8");
+            }
+        });
+
+        button9.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"9");
+            }
+        });
+
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resultTextView.setText(resultTextView.getText()+"+");
+            }
+        });
+
+        buttonMultiply.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"*");
+            }
+        });
+
+        buttonDivision.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"/");
+            }
+        });
+
+        buttonDecimal.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+".");
+            }
+        });
+
+
+        buttonBackSpace.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(resultTextView.getText().length()>0)
+                {
+                    String bksp;
+                    bksp = resultTextView.getText().toString();
+                    bksp=bksp.substring(0,bksp.length()-1);
+                    resultTextView.setText(bksp);
+                }
+            }
+        });
+
+        buttonEquals.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                String expression;
+                double result;
+                String rsltxt;
+
+                expression = resultTextView.getText().toString();
+                result = calculateResult(expression);
+                rsltxt = Double.toString(result);
+                resultTextView.setText(rsltxt);
             }
         });
 
