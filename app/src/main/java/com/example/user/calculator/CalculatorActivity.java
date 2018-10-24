@@ -74,6 +74,33 @@ public class CalculatorActivity extends AppCompatActivity
             }
         });
 
+        button4.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"4");
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"5");
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"6");
+            }
+        });
+
         button7.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -105,6 +132,15 @@ public class CalculatorActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 resultTextView.setText(resultTextView.getText()+"+");
+            }
+        });
+
+        buttonMinus.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText(resultTextView.getText()+"-");
             }
         });
 
@@ -148,6 +184,15 @@ public class CalculatorActivity extends AppCompatActivity
                     bksp=bksp.substring(0,bksp.length()-1);
                     resultTextView.setText(bksp);
                 }
+            }
+        });
+
+        buttonClear.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                resultTextView.setText("");
             }
         });
 
