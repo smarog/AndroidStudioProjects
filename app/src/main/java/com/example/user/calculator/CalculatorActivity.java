@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 
+// η συνάρτηση calculateResult υπολογιζει το αποτελεσμα της αριθμητικης παραστασης και το επιστρεφει σε μια double μεταβλητη
+
 public class CalculatorActivity extends AppCompatActivity
 {
 
