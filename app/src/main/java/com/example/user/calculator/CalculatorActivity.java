@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 
-//hello testing
+//hello testing 2
 public class CalculatorActivity extends AppCompatActivity
 {
 
