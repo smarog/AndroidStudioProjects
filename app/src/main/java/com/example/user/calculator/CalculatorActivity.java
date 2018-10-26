@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 
-// eleni
+
 public class CalculatorActivity extends AppCompatActivity
 {
 
